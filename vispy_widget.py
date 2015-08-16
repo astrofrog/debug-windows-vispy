@@ -5,7 +5,7 @@ from itertools import cycle
 from glue.external.qt import QtGui, QtCore
 from vispy import scene
 from vispy.color import get_colormaps
-from .colormaps import TransFire, TransGrays
+from colormaps import TransFire, TransGrays
 
 __all__ = ['QtVispyWidget']
 
