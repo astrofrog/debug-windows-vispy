@@ -1,9 +1,10 @@
 import numpy as np
 from vispy_widget import QtVispyWidget
-from glue.qt import get_qapp
+from PyQt4 import QtGui
 
-# Make sure QApplication is started
-get_qapp()
+# Start up Qt application
+qapp = QtGui.QApplication([''])
+qapp.setQuitOnLastWindowClosed(True)
 
 # Create fake data
 data = np.arange(1000).reshape((10,10,10))
@@ -13,3 +14,5 @@ w = QtVispyWidget()
 w.set_data(data)
 w.set_canvas()
 w.canvas.render()
+
+
