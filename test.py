@@ -12,18 +12,10 @@ class QtVispyWidget(QtGui.QWidget):
 
         super(QtVispyWidget, self).__init__(parent=parent)
 
-        self.canvas = scene.SceneCanvas(keys='interactive', size=(800, 600), show=True)
-        self.canvas.measure_fps()
-
+        self.canvas = scene.SceneCanvas(show=True)
         view = self.canvas.central_widget.add_view()
-
-        volume = scene.visuals.Volume(data, parent=view.scene,
-                                      threshold=0.1,
-                                      emulate_texture=False)
-
-        view.camera = scene.cameras.TurntableCamera(parent=view.scene,
-                                                    fov=60.,
-                                                    name='Turntable')
+        volume = scene.visuals.Volume(data, parent=view.scene)
+        view.camera = scene.cameras.TurntableCamera(parent=view.scene)
 
 # Start up Qt application
 qapp = QtGui.QApplication([''])
