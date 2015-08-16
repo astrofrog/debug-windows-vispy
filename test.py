@@ -10,9 +10,5 @@ qapp.setQuitOnLastWindowClosed(True)
 data = np.arange(1000).reshape((10,10,10))
 
 # Set up widget
-w = QtVispyWidget()
-w.set_data(data)
-w.set_canvas()
+w = QtVispyWidget(data=data)
 w.canvas.render()
-
-
