@@ -37,7 +37,7 @@ install:
     - "SET VISPY_GL_LIB=%CD%\\opengl32.dll"
 
     # Install specified version of numpy and dependencies
-    - "conda install -q --yes numpy pip"
+    - "conda install -q --yes numpy pyqt pip"
     
     # Install vispy from GitHub
     - "pip install https://github.com/vispy/vispy/archive/master.zip"
