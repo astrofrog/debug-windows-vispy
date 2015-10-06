@@ -9,4 +9,5 @@ view = canvas.central_widget.add_view()
 axis = scene.visuals.XYZAxis(parent=view.scene)
 view.camera = scene.cameras.TurntableCamera(parent=view.scene)
 
-canvas.render()
+with canvas:
+    canvas.render()
